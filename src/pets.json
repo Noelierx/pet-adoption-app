@@ -1,0 +1,121 @@
+{
+    "pets": [
+      {
+        "id": 1,
+        "name": "Waly",
+        "species": "Cat",
+        "breed": "Selkirk Straight",
+        "adoption_fee": 1000,
+        "tags": [
+          {"age": 1},
+          {"gender": "Male"},
+          {"size": "Medium"}
+        ],
+        "pictures": [
+          "https://i.imgur.com/5uPO1Bx.jpg",
+          "https://i.imgur.com/JY70yP4.jpg",
+          "https://i.imgur.com/c3wDOlj.jpg",
+          "https://i.imgur.com/Poua7ny.jpeg"
+        ],
+        "location": "Ile de France - Paris 17e",
+        "description": "Waly is a very quiet cat that loves hugs who gets along with animals as well as children, he will be perfect for a family. Waly is up-to-date on her vaccinations and has been spayed."
+      },
+      {
+        "id": 2,
+        "name": "Fluffy",
+        "species": "Cat",
+        "breed": "Persian",
+        "adoption_fee": 500,
+        "tags": [
+          {"age": 2},
+          {"gender": "Female"},
+          {"size": "small"}
+        ],
+        "pictures": [
+          "https://images.pexels.com/photos/7445023/pexels-photo-7445023.jpeg",
+          "https://images.pexels.com/photos/7445121/pexels-photo-7445121.jpeg",
+          "https://images.pexels.com/photos/7445032/pexels-photo-7445032.jpeg",
+          "https://images.pexels.com/photos/7445034/pexels-photo-7445034.jpeg"
+        ],
+        "location": "Ile de France - Paris 10e",
+        "description": "Fluffy is a sweet and playful 2-year-old Persian cat. She loves to cuddle and play with toys, and gets along well with other animals. Fluffy is up-to-date on her vaccinations and has been spayed."
+      },
+      {
+        "id": 3,
+        "name": "Buddy",
+        "species": "Dog",
+        "breed": "Labrador Retriever",
+        "adoption_fee": 700,
+        "tags": [
+          {"age": 5},
+          {"gender": "Male"},
+          {"size": "large"}
+        ],
+        "pictures": [
+          "https://images.pexels.com/photos/3039080/pexels-photo-3039080.jpeg",
+          "https://images.pexels.com/photos/1696589/pexels-photo-1696589.jpeg",
+          "https://images.pexels.com/photos/3039079/pexels-photo-3039079.jpeg"
+        ],
+        "location": "Ile de France - Paris 8e",
+        "description": "Buddy is a friendly and energetic 5-year-old Labrador Retriever. He enjoys going for walks and playing fetch, and is great with kids. Buddy is up-to-date on his vaccinations and has been neutered."
+      },
+      {
+        "id": 4,
+        "name": "Samantha",
+        "species": "Rabbit",
+        "breed": "Dutch",
+        "adoption_fee": 20,
+        "tags": [
+          {"age": 1},
+          {"gender": "Female"},
+          {"size": "small"}
+        ],
+        "pictures": [
+          "https://images.pexels.com/photos/4588056/pexels-photo-4588056.jpeg",
+          "https://images.pexels.com/photos/4580745/pexels-photo-4580745.jpeg",
+          "https://images.pexels.com/photos/4588428/pexels-photo-4588428.jpeg",
+          "https://images.pexels.com/photos/4588055/pexels-photo-4588055.jpeg"
+        ],
+        "location": "Ile de France - La Défense",
+        "description": "Samantha is a cute and curious 1-year-old Dutch rabbit. She loves to hop around and explore her surroundings, and is very social. Samantha is up-to-date on her vaccinations and has been spayed."
+      },
+      {
+        "id": 5,
+        "name": "Max",
+        "species": "Cat",
+        "breed": "Siamese",
+        "adoption_fee": 250,
+        "tags": [
+          {"age": 4},
+          {"gender": "Male"},
+          {"size": "medium"}
+        ],
+        "pictures": [
+          "https://images.pexels.com/photos/596590/pexels-photo-596590.jpeg",
+          "https://images.pexels.com/photos/596591/pexels-photo-596591.jpeg",
+          "https://images.pexels.com/photos/952581/pexels-photo-952581.jpeg",
+          "https://images.pexels.com/photos/952582/pexels-photo-952582.jpeg"
+        ],
+        "location": "Ile de France - Levallois",
+        "description": "Max is a handsome and friendly 4-year-old Siamese cat. He loves to cuddle and be around people, and has a playful personality. Max is up-to-date on his vaccinations and has been neutered."
+      },
+      {
+        "id": 6,
+        "name": "Poppy",
+        "species": "Dog",
+        "breed": "Unknow",
+        "adoption_fee": 500,
+        "tags": [
+          {"age": 2},
+          {"gender": "Female"},
+          {"size": "large"}
+        ],
+        "pictures": [
+          "https://i.imgur.com/sbsoQ6s.jpg"
+        ],
+        "location": "Ile de France - Levallois",
+        "description": "Poppy is a cute and very friendly 2-year-old puppy. She loves dinosaurs."
+      }
+    ]
+  }
+  

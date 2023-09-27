@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,179 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Update App.css for side panel styles */
+
+/* Styling for the side panel */
+.sidepanel {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #333; /* Updated background color */
+  overflow-x: hidden;
+  transition: 0.3s; /* Updated transition duration */
+  padding-top: 60px;
+  color: black;
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+/* Added styles for the overlay when side panel is open */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  z-index: 1;
+}
+
+/* Update App.css for search bar styles */
+
+/* Styling for the search bar */
+.search-bar {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+/* Update App.css for filter dropdown styles */
+
+/* Styling for the filter dropdowns */
+.filter-dropdown {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-dropdown select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+/* Update App.css for button styles */
+
+/* Styling for buttons */
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+/* Update PetList.css for grid layout */
+
+/* Styling for the pet list in a grid */
+.pet-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid with a minimum width of 250px */
+  gap: 20px; /* Gap between grid items */
+  list-style: none;
+  padding: 0;
+}
+
+.pet-list li {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.pet-list img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Add this CSS to your App.css or a separate CSS file */
+
+/* Styling for the tab panel */
+.tab-panel {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+/* Styling for the tab buttons */
+.tab-buttons {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.tab-buttons button {
+  background-color: transparent;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab-buttons button:hover {
+  background-color: #eee;
+  border-radius: 5px;
 }
