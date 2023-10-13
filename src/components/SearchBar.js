@@ -1,4 +1,3 @@
-// src/components/SearchBar.js
 import React, { useState } from 'react';
 
 const SearchBar = ({ onSearch }) => {
@@ -12,15 +11,33 @@ const SearchBar = ({ onSearch }) => {
     onSearch(searchText);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      // Trigger search when Enter key is pressed
+      handleSearch();
+    }
+  };
+
   return (
     <div className="search-bar">
-      <input 
+      <label htmlFor="searchInput" className="visually-hidden">
+        Search by Name
+      </label>
+      <input
         type="text"
+        id="searchInput"
         placeholder="Search by Name"
         value={searchText}
         onChange={handleInputChange}
+        onKeyPress={handleKeyPress} // Handle Enter key press
       />
-      <button className="search-bar button" onClick={handleSearch}>Search</button>
+      <button
+        className="search-bar button"
+        onClick={handleSearch}
+        aria-label="Search"
+      >
+        Search
+      </button>
     </div>
   );
 };

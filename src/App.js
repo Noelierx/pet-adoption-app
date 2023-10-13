@@ -1,18 +1,18 @@
-// src/App.js
 import React, { useState } from 'react';
 import './App.css';
 import PetList from './components/PetList';
 import SearchBar from './components/SearchBar';
 import FilterOptions from './components/FilterOptions';
-import SidePanel from './components/SidePanel'; // Import the SidePanel component
+import SidePanel from './components/SidePanel';
+import Notification from './components/Notification';
 import petData from './pets.json';
 
 function App() {
   const [filteredPets, setFilteredPets] = useState(petData.pets);
   const [wishlist, setWishlist] = useState([]);
   const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
+  const [wishlistNotification, setWishlistNotification] = useState('');
 
-  // Callback function to handle the search
   const handleSearch = (searchText) => {
     const filtered = petData.pets.filter((pet) =>
       pet.name.toLowerCase().includes(searchText.toLowerCase())
@@ -20,7 +20,6 @@ function App() {
     setFilteredPets(filtered);
   };
 
-  // Callback function to handle the filtering
   const handleFilter = (filters) => {
     let filtered = petData.pets;
 
@@ -35,26 +34,31 @@ function App() {
     setFilteredPets(filtered);
   };
 
-  // Callback function to add a pet to the wishlist
   const addToWishlist = (petId) => {
     const petToAdd = petData.pets.find((pet) => pet.id === petId);
     if (petToAdd) {
       setWishlist([...wishlist, petToAdd]);
+      setWishlistNotification(`${petToAdd.name} added to the wishlist`);
     }
   };
 
-  // Callback function to remove a pet from the wishlist
   const removeFromWishlist = (petId) => {
+    if (!petData.pets || !wishlist) {
+      return;
+    }
+    const petToRemove = wishlist.find((pet) => pet.id === petId);
+    if (!petToRemove){
+      return;
+    }
     const updatedWishlist = wishlist.filter((pet) => pet.id !== petId);
     setWishlist(updatedWishlist);
+    setWishlistNotification(`${petToRemove.name} removed to the wishlist`);
   };
 
-  // Function to open the side panel
   const openSidePanel = () => {
     setIsSidePanelOpen(true);
   };
 
-  // Function to close the side panel
   const closeSidePanel = () => {
     setIsSidePanelOpen(false);
   };
@@ -67,15 +71,19 @@ function App() {
       <main>
         <SearchBar onSearch={handleSearch} />
         <FilterOptions onFilter={handleFilter} />
-        <button className="button" onClick={openSidePanel}>Open Side Panel</button>
-        {/* Include the SidePanel component */}
-        <SidePanel
-          isOpen={isSidePanelOpen}
-          onClose={closeSidePanel}
-          wishlist={wishlist}
-          onRemoveFromWishlist={removeFromWishlist}
-        />
+        <button className="button" onClick={openSidePanel} aria-label="Open Wishlist Panel">
+          Open Side Panel
+        </button>
+        {isSidePanelOpen && (
+          <SidePanel
+            isOpen={isSidePanelOpen}
+            onClose={closeSidePanel}
+            wishlist={wishlist}
+            onRemoveFromWishlist={removeFromWishlist}
+          />
+        )}
         <PetList pets={filteredPets} onAddToWishlist={addToWishlist} />
+        <Notification message={wishlistNotification} />
       </main>
     </div>
   );
