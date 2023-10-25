@@ -3,7 +3,7 @@ import TabPanel from './TabPanel';
 
 const SidePanel = ({ isOpen, onClose, wishlist, onRemoveFromWishlist }) => {
   const sidePanelStyle = {
-    width: isOpen ? '500px' : '0',
+    width: isOpen ? '300px' : '0',
   };
 
   const overlayStyle = {
@@ -14,22 +14,11 @@ const SidePanel = ({ isOpen, onClose, wishlist, onRemoveFromWishlist }) => {
   const sidePanelRef = useRef(null);
 
   useEffect(() => {
-    // Focus on the close button when the side panel opens
     if (isOpen && closeBtnRef.current) {
       closeBtnRef.current.focus();
     }
   }, [isOpen]);
 
-  const handleOverlayClick = () => {
-    onClose();
-  };
-
-  const handleBlur = (e) => {
-    // Check if the newly focused element is not inside the side panel
-    if (isOpen && !sidePanelRef.current.contains(e.relatedTarget)) {
-      onClose();
-    }
-  };
 
   return (
     <div>
@@ -37,22 +26,20 @@ const SidePanel = ({ isOpen, onClose, wishlist, onRemoveFromWishlist }) => {
         <div
           className="overlay"
           style={overlayStyle}
-          onClick={handleOverlayClick}
-          tabIndex={0} // Make the overlay focusable when the side panel is open
+          tabIndex={0}
         ></div>
       )}
       <div
         className="sidepanel"
         style={sidePanelStyle}
-        tabIndex={0} // Make the side panel focusable
+        tabIndex={0}
         ref={sidePanelRef}
-        onBlur={handleBlur}
       >
         <button
           className="closebtn"
           onClick={() => onClose()}
           aria-label="Close Wishlist Panel"
-          tabIndex={isOpen ? 0 : -1} // Make the close button focusable only when the panel is open
+          tabIndex={isOpen ? 0 : -1}
           ref={closeBtnRef}
         >
           &times;
