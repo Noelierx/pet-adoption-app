@@ -6,6 +6,9 @@ import FilterOptions from './components/FilterOptions';
 import SidePanel from './components/SidePanel';
 import Notification from './components/Notification';
 import petData from './pets.json';
+import ParallaxHeader from './components/ParallaxHeader';
+import Video from './components/Video';
+import videoFile from './assets/video.mp4';
 
 function App() {
   const [filteredPets, setFilteredPets] = useState(petData.pets);
@@ -65,9 +68,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Pet Adoption App</h1>
-      </header>
+      <ParallaxHeader />
       <main>
         <SearchBar onSearch={handleSearch} />
         <FilterOptions onFilter={handleFilter} />
@@ -84,6 +85,7 @@ function App() {
         )}
         <PetList pets={filteredPets} onAddToWishlist={addToWishlist} />
         <Notification message={wishlistNotification} />
+        <Video src={videoFile} title="Mountains landscape" />
       </main>
     </div>
   );

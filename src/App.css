@@ -14,15 +14,42 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  height: 220px;
+  transform-style: preserve-3d;
+  position: relative;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.App-header h1 {
+  text-align: center;
+  font-size: 4rem;
+  font-family: sans-serif;
+}
+
+.App-header::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://picsum.photos/1080/720");
+  background-size: cover;
+  z-index: -1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-header::after {
+    transform: none;
+    background-attachment: fixed; /* For better performance */
+  }
+}
+
 
 .App-link {
   color: #61dafb;
@@ -237,46 +264,50 @@
   border: 0,
 }
 
-.navbar {
-  display: flex;
-}
-
-.nav-item {
+.carousel {
   position: relative;
-  margin-right: 15px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.nav-button {
+.slide-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
   background: none;
   border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.nav-button:hover {
-  text-decoration: underline;
-}
-
-.nav-submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: rgb(0, 0, 0);
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.nav-item:hover .nav-submenu {
-  display: block;
-}
-
-.nav-subitem {
+  color: #333;
   padding: 8px;
-  border-bottom: 1px solid #ddd;
 }
 
-.expanded {
-  font-weight: bold;
+.arrow.left {
+  left: 8px;
+}
+
+.arrow.right {
+  right: 8px;
+}
+
+.active {
+  border: 2px solid #333;
 }

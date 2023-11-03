@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Carousel from './Carousel';
 
 const Accordion = ({ title, content, controls, id }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -43,6 +44,7 @@ const PetList = ({ pets, onAddToWishlist }) => {
             <button className="button" onClick={() => onAddToWishlist(pet.id)}>Add to Wishlist</button>
             <Accordion title="Location" content={pet.location} controls="Location" id="Location1" />
             <Accordion title="Description" content={pet.description} controls="Description" id="Description1" />
+            <Carousel images={pet.pictures} />
           </li>
         ))}
       </ul>
